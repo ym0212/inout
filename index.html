@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html>
+<head>
+<script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</head>
 <body>
-<h1>Hello World</h1>
+<script>
+	window.onload = function () {
+		liff
+  .init({
+    liffId: "1660702039-9nZBBYR7",
+  })
+  .then(() => {
+  })
+
+  liff.sendMessages([{
+        'type': 'text',
+        'text': '【登録完了】'
+    }]).then(function() {
+        liff.closeWindow();
+    })
+	}
+</script>
 </body>
 </html>
