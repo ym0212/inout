@@ -9,6 +9,13 @@
   <input type="button" value="お支払い完了！" onclick="sendMessage()">
 <script>
 	window.onload = function () {
+
+    liff
+  .init({
+    liffId: "1660702039-9nZBBYR7",
+  })
+  .then(() => {
+  })
     //setTimeout(alert('アラート'), 6000); 
   
 
@@ -18,18 +25,14 @@
     },
     i * 1000);
 }
+
+liff.closeWindow();
 /*
 setTimeout(() => {
   //window.location = 'https:';
   window.close();
 },
 5000);
-  	liff
-  .init({
-    liffId: "1660702039-9nZBBYR7",
-  })
-  .then(() => {
-  })
 
   liff.sendMessages([{
         'type': 'text',
