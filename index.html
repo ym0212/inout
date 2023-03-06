@@ -10,37 +10,43 @@
 <script>
 	window.onload = function () {
 
-    liff
-  .init({
-    liffId: "1660702039-9nZBBYR7",
+  liff
+    .init({
+      liffId: "1660702039-9nZBBYR7",
+    })
+    .then(() => {
   })
-  .then(() => {
-  })
-    //setTimeout(alert('アラート'), 6000); 
-  
 
-  for(let i = 0; i < 6; i++) {
-    setTimeout(() => {
-      document.getElementById( "announce" ).innerHTML =  (5 - i);
-    },
-    i * 1000);
-}
-setTimeout(() => {
-  liff.closeWindow();
-},
-5000);
-/*
-  liff.sendMessages([{
+  var urlParams = new URLSearchParams(window.location.search);
+  var param = urlParams.get('office');
+
+  if(param == 1){
+    var office = 'オフィス1';
+  }else if(param == 2){
+    var office = 'オフィス2';
+  }else{
+    var office = '-';
+  }
+
+  var time = Utilities.formatDate(new Date(), 'JST', 'HH:mm');
+
+  var msg = '🤖---------------\n出勤・退勤システム\n---------------🤖';
+  msg += 'QRコードをタップしました';
+  msg += '\n時間：' + time;
+  msg += '\nオフィス：' + office;
+
+
+  setTimeout(() => {//開いた5秒後に閉じる
+    var idToken = liff.getIDToken();
+      liff.sendMessages([{
         'type': 'text',
         'text': '【登録完了】'
-    }]).then(function() {
-        liff.closeWindow();
+      }]).then(function() {
+      liff.closeWindow();
     })
-    */
-	}
-  function sendMessage(){
-    //alert('アラート');
-  }
+  },
+  5000);
+}
 </script>
 </body>
 </html>
