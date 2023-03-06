@@ -40,7 +40,7 @@
     var idToken = liff.getIDToken();
       liff.sendMessages([{
         'type': 'text',
-        'text': '【登録完了】'
+        'text': msg
       }]).then(function() {
       liff.closeWindow();
     })
